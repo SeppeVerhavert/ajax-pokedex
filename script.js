@@ -4,9 +4,11 @@ function searchPokemon() {
     let userInput = document.getElementById('inputField').value;
     fetch(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         .then(res => res.json())
-        .then(result => {
-            showData(result);
-        });
+        .then(result => { showData(result); });
+
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${userInput}/`)
+        .then(res => res.json())
+        .then(result => { showEvolution(result); });
 }
 
 function showData(serverData) {
@@ -38,5 +40,14 @@ function showMoves(serverData) {
     for (i = 0; i != 4; i += 1) {
         moveSet.push(serverData.moves[i].move.name);
         document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
+    }
+}
+
+function showEvolution(serverData) {
+    let evolution = document.getElementById("evolutionDiv");
+    if (serverData.evolves_from_species == null) {
+        evolution.innerHTML = "";
+    } else {
+        evolution.innerHTML = serverData.evolves_from_species.name;
     }
 }
