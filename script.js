@@ -13,6 +13,9 @@ function showData(serverData) {
     let nameHeader = document.getElementById("nameHeader");
     nameHeader.innerHTML = serverData.name;
     
+    let idHeader = document.getElementById("idHeader");
+    idHeader.innerHTML = serverData.id;
+
     let sprite = document.getElementById("sprite");
     sprite.src = serverData.sprites.front_default;
 }
