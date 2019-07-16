@@ -43,12 +43,12 @@ function showSprite(serverData) {
     sprite.src = serverData.sprites.front_default;
 }
 
-function showMoves(serverData) {
-    let i = 0;
+function showMoves(serverData) { 
     let moveSet = [];
 
     for (i = 0; i != 4; i += 1) {
-        moveSet.push(serverData.moves[i].move.name);
+        let j = (i*6) + 3;
+        moveSet.push(serverData.moves[j].move.name);
         document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
     }
 }
