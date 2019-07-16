@@ -102,12 +102,7 @@ html {
     }
 
     #sprite {
-        margin: 5%;
         width: 80%;
-        height: 68%;
-        background-color: white;
-        border-radius: 10px;
-        border: 3px solid rgb(184, 0, 37);
     }
 
     #rightHalf {
