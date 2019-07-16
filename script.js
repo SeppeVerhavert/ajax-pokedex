@@ -1,4 +1,7 @@
 document.getElementById('searchBtn').addEventListener('click', searchPokemon);
+document.getElementById('buttonNext').addEventListener('click', nextPokemon);
+document.getElementById('buttonPrevious').addEventListener('click', previousPokemon);
+let storedId = 0;
 
 function searchPokemon() {
     let userInput = document.getElementById('inputField').value;
@@ -11,9 +14,16 @@ function searchPokemon() {
         .then(result => { showEvolution(result); });
 }
 
+function checkStoredId() {
+    if (storedId != 0) {
+        userInput = storedId + 1;
+    }
+}
+
 function showData(serverData) {
     showName(serverData);
     showId(serverData);
+    storeId(serverData);
     showTypes(serverData);
     showSprite(serverData);
     showMoves(serverData);
@@ -27,6 +37,10 @@ function showName(serverData) {
 function showId(serverData) {
     let idHeader = document.getElementById("idHeader");
     idHeader.innerHTML = "pokémon id: <br>" + serverData.id;
+}
+
+function storeId(serverData) {
+    storedId = serverData.id;
 }
 
 function showTypes(serverData) {
@@ -43,11 +57,11 @@ function showSprite(serverData) {
     sprite.src = serverData.sprites.front_default;
 }
 
-function showMoves(serverData) { 
+function showMoves(serverData) {
     let moveSet = [];
 
     for (i = 0; i != 4; i += 1) {
-        let j = (i*6) + 3;
+        let j = (i * 6) + 3;
         moveSet.push(serverData.moves[j].move.name);
         document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
     }
@@ -60,4 +74,14 @@ function showEvolution(serverData) {
     } else {
         evolution.innerHTML = "evolves from: <br>" + serverData.evolves_from_species.name;
     }
+}
+
+function nextPokemon() {
+    console.log("next");
+    searchPokemon();
+}
+
+function previousPokemon() {
+    console.log("previous");
+    searchPokemon();
 }
