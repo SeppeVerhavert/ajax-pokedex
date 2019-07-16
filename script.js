@@ -20,12 +20,12 @@ function showData(serverData) {
 
 function showName(serverData) {
     let nameHeader = document.getElementById("nameHeader");
-    nameHeader.innerHTML = serverData.name;
+    nameHeader.innerHTML = "pokémon name: <br>" + serverData.name;
 }
 
 function showId(serverData) {
     let idHeader = document.getElementById("idHeader");
-    idHeader.innerHTML = serverData.id;
+    idHeader.innerHTML = "pokémon id: <br>" + serverData.id;
 }
 
 function showSprite(serverData) {
@@ -46,8 +46,8 @@ function showMoves(serverData) {
 function showEvolution(serverData) {
     let evolution = document.getElementById("evolutionDiv");
     if (serverData.evolves_from_species == null) {
-        evolution.innerHTML = "";
+        evolution.innerHTML = "evolves from: <br> none";
     } else {
-        evolution.innerHTML = serverData.evolves_from_species.name;
+        evolution.innerHTML = "evolves from: <br>" + serverData.evolves_from_species.name;
     }
 }
