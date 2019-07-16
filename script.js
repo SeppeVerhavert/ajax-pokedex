@@ -18,8 +18,8 @@ function getUserInput() {
 function fetchData() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         .then(res => res.json())
-        .then(result => { showData(result); });
-
+        .then(result => {showData(result); });
+        
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${userInput}/`)
         .then(res => res.json())
         .then(result => { showEvolution(result); });
