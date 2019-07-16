@@ -1,9 +1,10 @@
 document.getElementById('searchBtn').addEventListener('click', searchPokemon);
 document.getElementById('nextBtn').addEventListener('click', nextPokemon);
-document.getElementById('shinyBtn').addEventListener('click', previousPokemon);
+document.getElementById('shinyBtn').addEventListener('click', shinySprite);
 document.getElementById('previousBtn').addEventListener('click', previousPokemon);
 let storedId = 0;
 let userInput;
+let shinyPokemon = false;
 
 function searchPokemon() {
     getUserInput();
@@ -57,8 +58,11 @@ function showTypes(serverData) {
 }
 
 function showSprite(serverData) {
-    let sprite = document.getElementById("sprite");
-    sprite.src = serverData.sprites.front_default;
+    if (shinyPokemon) {
+        sprite.src = serverData.sprites.front_shiny;
+    } else {
+        sprite.src = serverData.sprites.front_default;
+    }
 }
 
 function showMoves(serverData) {
@@ -93,3 +97,14 @@ function previousPokemon() {
     }
     fetchData();
 }
+
+function shinySprite() {
+    if (shinyPokemon) {
+        document.getElementById("shinyBtn").style.background="rgb(115, 224, 219)"
+        shinyPokemon = false;
+    } else {
+        document.getElementById("shinyBtn").style.background="rgb(220, 223, 49)"
+        shinyPokemon = true;
+    }
+}
+
