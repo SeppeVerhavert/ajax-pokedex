@@ -129,13 +129,18 @@ html {
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     #pokedex {
         width: 80%;
-        height: 720px;
+        height: 780px;
         margin: auto;
         margin-top: 3%;
         background-color: rgb(240, 0, 50);
         border-radius: 10px;
         box-shadow: 5px 5px rgb(184, 0, 37);
         display: block;
+    }
+
+    #header {
+        margin-left: 25%;
+        font-size: 1rem;
     }
     
     #leftHalf {
@@ -152,7 +157,7 @@ html {
     }
 
     #sprite {
-        width: 80%;
+        width: 70%;
     }
 
     #rightHalf {

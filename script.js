@@ -30,8 +30,8 @@ function showData(serverData) {
     showId(serverData);
     storeId(serverData);
     showTypes(serverData);
-    showSprite(serverData);
     showMoves(serverData);
+    showSprite(serverData);
 }
 
 function showName(serverData) {
@@ -51,7 +51,7 @@ function storeId(serverData) {
 function showTypes(serverData) {
     let typesHeader = document.getElementById("typesHeader");
     if (serverData.types.length === 2) {
-        typesHeader.innerHTML = "pokémon types: <br>" + serverData.types[1].type.name + " ," + serverData.types[0].type.name;
+        typesHeader.innerHTML = "pokémon types: <br>" + serverData.types[1].type.name + ", " + serverData.types[0].type.name;
     } else if (serverData.types.length === 1) {
         typesHeader.innerHTML = "pokémon types: <br>" + serverData.types[0].type.name
     }
@@ -67,11 +67,24 @@ function showSprite(serverData) {
 
 function showMoves(serverData) {
     let moveSet = [];
-
-    for (i = 0; i != 4; i += 1) {
-        let j = (i * 6) + 3;
-        moveSet.push(serverData.moves[j].move.name);
-        document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
+    if (serverData.moves.length < 2) {
+        for (i = 0; i != 4; i += 1) {
+            moveSet.push(serverData.moves[0].move.name);
+            document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
+        }
+    }
+    else if (serverData.moves.length < 21) {
+        for (i = 0; i != 4; i += 1) {
+            moveSet.push(serverData.moves[i].move.name);
+            document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
+        }
+    }
+    else {
+        for (i = 0; i != 4; i += 1) {
+            let j = (i * 6) + 3;
+            moveSet.push(serverData.moves[j].move.name);
+            document.getElementsByClassName("move")[i].innerHTML = moveSet[i];
+        }
     }
 }
 
@@ -100,11 +113,10 @@ function previousPokemon() {
 
 function shinySprite() {
     if (shinyPokemon) {
-        document.getElementById("shinyBtn").style.background="rgb(115, 224, 219)"
+        document.getElementById("shinyBtn").style.background = "rgb(115, 224, 219)"
         shinyPokemon = false;
     } else {
-        document.getElementById("shinyBtn").style.background="rgb(220, 223, 49)"
+        document.getElementById("shinyBtn").style.background = "rgb(220, 223, 49)"
         shinyPokemon = true;
     }
 }
-
