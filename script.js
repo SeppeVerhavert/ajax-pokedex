@@ -2,9 +2,18 @@ document.getElementById('searchBtn').addEventListener('click', searchPokemon);
 document.getElementById('buttonNext').addEventListener('click', nextPokemon);
 document.getElementById('buttonPrevious').addEventListener('click', previousPokemon);
 let storedId = 0;
+let userInput;
 
 function searchPokemon() {
-    let userInput = document.getElementById('inputField').value;
+    getUserInput();
+    fetchData();
+}
+
+function getUserInput() {
+    userInput = document.getElementById('inputField').value;
+}
+
+function fetchData() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${userInput}/`)
         .then(res => res.json())
         .then(result => { showData(result); });
@@ -12,12 +21,6 @@ function searchPokemon() {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${userInput}/`)
         .then(res => res.json())
         .then(result => { showEvolution(result); });
-}
-
-function checkStoredId() {
-    if (storedId != 0) {
-        userInput = storedId + 1;
-    }
 }
 
 function showData(serverData) {
@@ -77,11 +80,15 @@ function showEvolution(serverData) {
 }
 
 function nextPokemon() {
-    console.log("next");
-    searchPokemon();
+    if (storedId != 0) {
+        userInput = storedId += 1;
+    }
+    fetchData();
 }
 
 function previousPokemon() {
-    console.log("previous");
-    searchPokemon();
+    if (storedId != 0) {
+        userInput = storedId -= 1;
+    }
+    fetchData();
 }
