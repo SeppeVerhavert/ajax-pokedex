@@ -1,6 +1,7 @@
 document.getElementById('searchBtn').addEventListener('click', searchPokemon);
-document.getElementById('buttonNext').addEventListener('click', nextPokemon);
-document.getElementById('buttonPrevious').addEventListener('click', previousPokemon);
+document.getElementById('nextBtn').addEventListener('click', nextPokemon);
+document.getElementById('shinyBtn').addEventListener('click', previousPokemon);
+document.getElementById('previousBtn').addEventListener('click', previousPokemon);
 let storedId = 0;
 let userInput;
 
