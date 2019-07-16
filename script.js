@@ -14,6 +14,7 @@ function searchPokemon() {
 function showData(serverData) {
     showName(serverData);
     showId(serverData);
+    showTypes(serverData);
     showSprite(serverData);
     showMoves(serverData);
 }
@@ -26,6 +27,15 @@ function showName(serverData) {
 function showId(serverData) {
     let idHeader = document.getElementById("idHeader");
     idHeader.innerHTML = "pokémon id: <br>" + serverData.id;
+}
+
+function showTypes(serverData) {
+    let typesHeader = document.getElementById("typesHeader");
+    if (serverData.types.length === 2) {
+        typesHeader.innerHTML = "pokémon types: <br>" + serverData.types[1].type.name + " ," + serverData.types[0].type.name;
+    } else if (serverData.types.length === 1) {
+        typesHeader.innerHTML = "pokémon types: <br>" + serverData.types[0].type.name
+    }
 }
 
 function showSprite(serverData) {
