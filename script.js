@@ -12,7 +12,7 @@ function searchPokemon() {
 }
 
 function getUserInput() {
-    userInput = document.getElementById('inputField').value;
+    userInput = document.getElementById('inputField').value.toLowerCase();
 }
 
 function fetchData() {
