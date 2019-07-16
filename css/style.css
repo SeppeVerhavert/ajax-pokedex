@@ -75,3 +75,50 @@ html {
     border-radius: 10px;
     border: 3px solid rgb(184, 0, 37);
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    #pokedex {
+        width: 80%;
+        height: 720px;
+        margin: auto;
+        margin-top: 3%;
+        background-color: rgb(240, 0, 50);
+        border-radius: 10px;
+        box-shadow: 5px 5px rgb(184, 0, 37);
+        display: block;
+    }
+    
+    #leftHalf {
+        width: 100%;
+        margin: 5%;
+    }
+
+    #inputField {
+        width: 85%;
+    }
+    
+    #searchBtn {
+        width: 90%;
+    }
+
+    #sprite {
+        margin: 5%;
+        width: 80%;
+        height: 68%;
+        background-color: white;
+        border-radius: 10px;
+        border: 3px solid rgb(184, 0, 37);
+    }
+
+    #rightHalf {
+        width: 100%;
+        margin: 5%;
+    }
+
+    #searchDiv {
+        padding: 5%;
+        padding-top: 5%;
+    }
+
+    
+}
