@@ -29,6 +29,7 @@ html {
 #leftHalf {
     width: 40%;
     margin: 5%;
+    margin-right: 0;
 }
 
 #searchDiv {
@@ -57,13 +58,58 @@ html {
     margin: 5%;
     width: 73%;
     height: 68%;
-    background-color: white;
+    background-color: rgb(238, 251, 252);
     border-radius: 10px;
     border: 3px solid rgb(184, 0, 37);
 }
 
+#buttons {
+    margin-left: 24%;
+    margin-top: 3%;
+    position: absolute;
+}
+
+#rectangleRed {
+    width: 50px;
+    height: 10px;
+    background: red;
+    border-radius: 10px;
+    border: 3px solid rgb(182, 206, 204);
+    margin-bottom: 10%;
+}
+
+#rectangleBlue {
+    width: 50px;
+    height: 10px;
+    background: blue;
+    border-radius: 10px;
+    border: 3px solid rgb(182, 206, 204);
+    margin-bottom: 10%;
+}
+
+#rectangleGreen {
+    width: 50px;
+    height: 10px;
+    background: green;
+    border-radius: 10px;
+    border: 3px solid rgb(182, 206, 204);
+}
+
+#blueButtons {
+    margin-top: 120%;
+}
+
+#rectangleButton {
+    width: 50px;
+    height: 50px;
+    background: rgb(115, 224, 219);
+    border-radius: 10px;
+    border: 3px solid rgb(182, 206, 204);
+    margin-top: 20%;
+}
+
 #rightHalf {
-    width: 40%;
+    width: 45%;
     margin: 5%;
 }
 
@@ -115,5 +161,7 @@ html {
         padding-top: 5%;
     }
 
-    
+    #buttons {
+        display: none;
+    }
 }
