@@ -11,20 +11,28 @@
 
 <body>
 
-    <container id="pokedex">
-        <input id="inputField" type="text" placeholder="Search pokémon by name or ID"></input>
-        <button id="searchBtn">Click me!</button>
-        <div id="nameHeader"></div>
-        <div id="idHeader"></div>
-        <div id="movesDiv">
-            <div class="move"></div>
-            <div class="move"></div>
-            <div class="move"></div>
-            <div class="move"></div>
+    <div id="pokedex">
+        <div id="leftHalf">
+            <div id="searchDiv">
+                <input id="inputField" type="text" placeholder="Search pokémon by name or ID"></input>
+                <button id="searchBtn">Click me!</button>
+            </div>
+            <img id="sprite" src="">
         </div>
-        <div id="evolutionDiv"></div>
-        <img id="sprite" src="">
-    </container>
+        <div id="rightHalf">
+            <div id="infoDiv">
+                <div id="nameHeader"></div>
+                <div id="idHeader"></div>
+                <div id="movesDiv">
+                    <div class="move"></div>
+                    <div class="move"></div>
+                    <div class="move"></div>
+                    <div class="move"></div>
+                </div>
+                <div id="evolutionDiv"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
