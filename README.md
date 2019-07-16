@@ -73,6 +73,7 @@ Catch the latest version [here](https://seppeverhavert.github.io/ajax-pokedex/).
 ##  Credits
 
 API information on https://pokeapi.co/.
+
 Background image found on [reddit](https://www.reddit.com/r/pokemon/comments/1gdlts/i_made_you_guys_a_background/) Posted by [u/Sandi315](https://www.reddit.com/user/Sandi315/).
 
 
