@@ -119,4 +119,5 @@ function shinySprite() {
         document.getElementById("shinyBtn").style.background = "rgb(220, 223, 49)"
         shinyPokemon = true;
     }
+    fetchData();
 }
